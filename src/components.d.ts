@@ -26,6 +26,7 @@ declare global {
 
     interface HelloText {
       'lng': string;
+      'photos': number;
     }
   }
 
@@ -49,6 +50,7 @@ declare global {
 
     export interface HelloTextAttributes extends HTMLAttributes {
       'lng'?: string;
+      'photos'?: number;
     }
   }
 

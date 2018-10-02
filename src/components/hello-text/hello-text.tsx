@@ -9,6 +9,7 @@ export class HelloText {
   @State() trigger = false;
   @Prop({ context: 'i18n' }) i18n: any;
   @Prop() lng = 'en';
+  @Prop({ mutable: true }) photos = 0;
 
   @Element() el!: HTMLStencilElement;
 
@@ -27,7 +28,8 @@ export class HelloText {
   render() {
     return <div>
             <button onClick={() => this.toggle()}>Toggle</button>
-              {this.i18n.t("NUM_PHOTOS", {numPhotos: 1})}
+            <button onClick={() => this.photos++}>+</button>
+              {this.i18n.t("NUM_PHOTOS", {numPhotos: this.photos})}
           </div>
   }
 }
